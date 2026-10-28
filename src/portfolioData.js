@@ -1,4 +1,3 @@
-import avatarImg from './assets/avatar.jpg';
 import toxicguardImg from './assets/toxicguard.jpg';
 import kamuicloudImg from './assets/kamuicloud.jpg';
 import moneypayImg from './assets/moneypay.jpg';
@@ -8,178 +7,430 @@ export const portfolioData = {
   personal: {
     brand: "HARSHIT.DEV",
     name: "Harshit Raj",
-    title: "Creative Developer & Aspiring Cloud Engineer",
-    degree: "B.Tech in Computer Science Engineering",
-    tagline: "Exploring the intersection of interactive web experiences, software engineering, and cloud infrastructure.",
-    heroHeadline: {
-      line1: "ENGINEERING",
-      line2: "THE NEXT",
-      line3: "DIGITAL FRONTIER."
-    },
-    heroSubtext: "I'm Harshit Raj — a developer exploring the intersection of interactive web experiences, software engineering, and cloud infrastructure.",
-    avatar: avatarImg,
-    status: {
-      available: true,
-      label: "AVAILABLE FOR ROLES & COLLABS",
-      badge: "Open to Internships & Junior Roles"
-    },
+    title: "B.Tech CSE Student · Web Developer & Aspiring Cloud Engineer",
+    degree: "B.Tech in Computer Science & Engineering (2023–2027)",
+    tagline: "Undergraduate Computer Science student learning by building interactive web applications and exploring Linux, Docker, and cloud infrastructure.",
+    heroKicker: "India · IST (UTC+5:30) · B.Tech CSE Undergraduate",
+    heroHeadline: "Learning by Building Interactive Web Apps & Exploring Cloud Systems.",
+    heroSubtext: "I am Harshit Raj — an undergraduate Computer Science Engineering student passionate about full-stack web development, Linux systems, Docker containerization, and self-hosted cloud experiments.",
+    statusLabel: "Open to Software & Cloud Engineering Internships, Hackathons & Entry-Level Roles",
     location: "India · IST (UTC+5:30)",
     country: "India",
     timezone: "Asia/Kolkata",
     email: "harshitraj.dev@gmail.com",
     github: "https://github.com/HarshitRaj31",
     linkedin: "https://www.linkedin.com/in/harshit-raj-a76b93329/",
+    metrics: [
+      {
+        value: "B.Tech CSE",
+        unit: "2023–2027",
+        label: "Computer Science Undergraduate",
+        detail: "Coursework in Data Structures & Algorithms, Operating Systems, Computer Networks & DBMS"
+      },
+      {
+        value: "04",
+        unit: "Student Builds",
+        label: "Hands-On Software Projects",
+        detail: "Self-directed projects spanning homelab cloud experiments, AI text moderation, fintech & web UI"
+      },
+      {
+        value: "Web & APIs",
+        unit: "Core Stack",
+        label: "React · Node.js · Express · SQL",
+        detail: "Building responsive frontend interfaces, RESTful backend APIs, and database schemas"
+      },
+      {
+        value: "Cloud Lab",
+        unit: "Exploring",
+        label: "Go · Docker · Linux · Git",
+        detail: "Practicing containerization, Linux CLI administration, and self-hosted server setups"
+      }
+    ],
     principles: [
       {
         number: "01",
-        title: "Build with purpose.",
-        description: "Writing maintainable, scalable code designed to solve genuine friction in user and developer workflows."
+        title: "Learn by building real projects.",
+        description: "Turning textbook computer science concepts—like networking, processes, and databases—into working code and interactive web apps."
       },
       {
         number: "02",
-        title: "Learn by experimenting.",
-        description: "From low-level Linux systems and Go networking to experimental web aesthetics, curiosity drives mastery."
+        title: "Look beneath the abstraction.",
+        description: "Going beyond high-level frameworks to understand how Linux, Docker containers, HTTP requests, and backend servers actually work."
       },
       {
         number: "03",
-        title: "Make technology useful.",
-        description: "Bridging visually compelling user interfaces with resilient, self-hosted and cloud-native infrastructure."
+        title: "Write clean, thoughtful code.",
+        description: "Focusing on readable component structure, responsive layouts, and practical problem-solving that makes technology genuinely useful."
       }
+    ],
+    studentSnapshot: [
+      { label: "Degree & Program", value: "B.Tech in Computer Science & Engineering (2023–2027)" },
+      { label: "Core CS Subjects", value: "DSA · Operating Systems · Computer Networks · DBMS · OOP" },
+      { label: "Current Learning Focus", value: "Go (Golang) · Docker Containers · Linux · Full-Stack React" },
+      { label: "Seeking Opportunities", value: "Software / Cloud Internships · Open Source · Collaborative Builds" }
     ]
   },
 
   projects: [
     {
-      id: "toxicguard",
+      id: "kamui-cloud",
       num: "01",
-      title: "ToxicGuard",
-      category: "AI / ML & Text Moderation",
+      title: "Kamui Cloud",
+      filterCategory: "cloud",
+      category: "Cloud & Systems Learning Project",
       year: "2025",
-      headline: "AI-Powered Toxic Speech Detection for Safer Digital Spaces",
-      summary: "A toxic speech detection system focused on safer digital communication.",
-      description: "A sophisticated text-analysis interface featuring real-time natural language sentiment processing, contextual sentence moderation flags, toxicity category breakdowns (aggression, insult, profanity), and an elegant dark analytical console.",
-      image: toxicguardImg,
-      technologies: ["React", "API Integration", "AI/ML", "JavaScript (ES6+)", "CSS Architecture"],
-      accentColor: "#36D9F5",
+      role: "Self-Directed Systems Project",
+      status: "Ongoing Student Exploration",
+      headline: "Open-Source Private Cloud & Self-Hosted Homelab Experiment",
+      summary: "An experimental student project exploring how available PC hardware can be connected into a self-hosted private cloud using Go, Docker, and Linux.",
+      description: "Started out of curiosity about how cloud platforms manage servers behind the scenes, Kamui Cloud is my hands-on learning project for systems and cloud engineering. It explores how local Linux machines can run containerized workloads with Docker, communicate over TCP/HTTP using Go services, and display node health metrics on a clean web dashboard.",
+      image: kamuicloudImg,
+      technologies: ["Go", "Docker", "Linux", "Networking Basics", "Shell Scripting"],
       githubUrl: "https://github.com/HarshitRaj31",
-      demoUrl: "https://github.com/HarshitRaj31",
-      demoPlaceholder: true,
-      features: [
-        "Real-time safety scoring algorithm analyzing toxic speech patterns",
-        "Granular toxicity breakdown measuring aggression, insult, hate speech, and profanity",
-        "Contextual highlighted text alerts with instant moderation recommendations",
-        "High-performance analytical dashboard designed with deep black minimalism"
+      metrics: [
+        { label: "Project Type", value: "Self-Hosted Homelab" },
+        { label: "Core Focus", value: "Go · Docker · Linux" },
+        { label: "Key Concept", value: "Container & Node Health" }
       ],
-      visualAspect: "Dark analytical UI with highlighted text flags & moderation gauges"
+      features: [
+        "Built a lightweight Go service to ping connected local nodes and check their online/offline status",
+        "Practiced running and managing isolated application containers using Docker and Linux CLI tools",
+        "Collected basic Linux system stats (CPU usage, memory, disk space) to visualize on a dashboard",
+        "Applied Computer Networks and Operating Systems coursework to a practical homelab setup"
+      ],
+      architectureSteps: [
+        {
+          step: "01. Local Network & Request Routing",
+          detail: "Incoming HTTP requests are routed on the local Linux host to the dashboard and API endpoints."
+        },
+        {
+          step: "02. Go Status Checker Service",
+          detail: "A concurrent Go program periodically sends health checks to registered local nodes to verify connectivity."
+        },
+        {
+          step: "03. Docker Container Management",
+          detail: "Uses Docker to package and run web services in isolated containers with defined port mappings."
+        },
+        {
+          step: "04. Linux Resource Monitoring",
+          detail: "Reads basic host metrics from Linux system utilities to display CPU, RAM, and container activity."
+        }
+      ],
+      codeSnippet: `package main
+
+import (
+	"fmt"
+	"net/http"
+	"time"
+)
+
+type NodeStatus struct {
+	Name    string
+	URL     string
+	Healthy bool
+}
+
+func checkNode(node *NodeStatus) {
+	client := http.Client{Timeout: 2 * time.Second}
+	resp, err := client.Get(node.URL + "/health")
+	if err != nil || resp.StatusCode != http.StatusOK {
+		node.Healthy = false
+		return
+	}
+	defer resp.Body.Close()
+	node.Healthy = true
+}
+
+func main() {
+	node := &NodeStatus{Name: "homelab-node-01", URL: "http://localhost:8080"}
+	checkNode(node)
+	fmt.Printf("Node %s healthy: %v\\n", node.Name, node.Healthy)
+}`
     },
     {
-      id: "kamui-cloud",
+      id: "toxicguard",
       num: "02",
-      title: "Kamui Cloud",
-      category: "Cloud Infrastructure & Systems",
+      title: "ToxicGuard",
+      filterCategory: "ai",
+      category: "AI / ML & Web Application",
       year: "2025",
-      headline: "Open-Source Private Cloud & Self-Hosted Topology",
-      summary: "An open-source private cloud project exploring self-hosted infrastructure using available hardware.",
-      description: "Exploring bare-metal infrastructure orchestration by connecting distributed consumer hardware into a resilient self-hosted private cloud. Includes abstract server topology visualization, interconnected node clusters, live telemetry feeds, and container runtime orchestration.",
-      image: kamuicloudImg,
-      technologies: ["Go", "Docker", "Linux", "Cloud Infrastructure", "Networking"],
-      accentColor: "#477BFF",
+      role: "Student Developer",
+      status: "Completed Project",
+      headline: "AI-Assisted Toxic Speech Detection & Moderation Dashboard",
+      summary: "A web application that analyzes text messages for toxic language patterns to promote safer online communication.",
+      description: "ToxicGuard is a project built to explore integrating AI/ML text classification APIs into a modern React interface. Users or moderators can input message streams to detect aggression, insults, hate speech, and profanity, viewing highlighted problem phrases and category score breakdowns in a dark analytical UI.",
+      image: toxicguardImg,
+      technologies: ["React", "JavaScript (ES6+)", "API Integration", "AI/ML APIs", "CSS Grid"],
       githubUrl: "https://github.com/HarshitRaj31",
-      demoUrl: "https://github.com/HarshitRaj31",
-      demoPlaceholder: true,
-      features: [
-        "Distributed node topology mapping with dynamic mesh telemetry",
-        "Containerized workload scheduling using custom Go runtime hooks and Docker",
-        "Real-time Linux kernel resource metrics (CPU, RAM, disk I/O, network traffic)",
-        "Self-healing architecture designed for affordable commodity and hobbyist hardware"
+      metrics: [
+        { label: "Project Type", value: "AI Moderation UI" },
+        { label: "Core Focus", value: "React & API Integration" },
+        { label: "Key Concept", value: "Sentiment & Safety Scoring" }
       ],
-      visualAspect: "Interconnected server topology nodes, terminal window logs, and kernel metrics"
+      features: [
+        "Integrated text-analysis APIs to evaluate user messages across toxicity categories (insult, aggression, profanity)",
+        "Created an interactive dashboard with safety score gauges and category breakdown bars",
+        "Implemented inline text highlighting to visually flag specific toxic words or phrases",
+        "Practiced asynchronous state management (loading, error handling, and live feed updates) in React"
+      ],
+      architectureSteps: [
+        {
+          step: "01. User Text Input & Normalization",
+          detail: "Cleans and validates text input from the user interface before sending it for analysis."
+        },
+        {
+          step: "02. Asynchronous API Call",
+          detail: "Sends the text payload to the classification endpoint and awaits category confidence scores."
+        },
+        {
+          step: "03. Safety Score Calculation",
+          detail: "Computes an overall safety percentage and determines whether the message should be flagged."
+        },
+        {
+          step: "04. Dashboard Visualization",
+          detail: "Renders the highlighted text spans, category progress bars, and moderation log entries in React."
+        }
+      ],
+      codeSnippet: `export async function analyzeMessageSafety(text) {
+  const cleanedText = text.trim();
+  if (!cleanedText) return null;
+
+  const response = await fetch('/api/moderate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: cleanedText }),
+  });
+
+  const data = await response.json();
+  const maxToxicity = Math.max(
+    data.scores.aggression,
+    data.scores.insult,
+    data.scores.profanity
+  );
+
+  return {
+    isFlagged: maxToxicity > 0.6,
+    safetyScore: Math.round((1 - maxToxicity) * 100),
+    categories: data.scores,
+  };
+}`
     },
     {
       id: "moneypay",
       num: "03",
       title: "MoneyPay",
-      category: "Fintech & Web Applications",
+      filterCategory: "web",
+      category: "Full-Stack Web Application",
       year: "2024",
-      headline: "Minimalist High-Fidelity Digital Transaction & P2P Engine",
-      summary: "A modern payment-oriented web application.",
-      description: "An intuitive financial management and peer-to-peer transaction interface. Emphasizes clean cryptographic security cues, real-time balance tracking, cash-flow trend analytics, and a friction-free payment workflow with frosted glass card styling.",
+      role: "Full-Stack Student Developer",
+      status: "Completed Project",
+      headline: "Digital Wallet Interface & Peer-to-Peer Transfer Web App",
+      summary: "A full-stack payment web application built to practice authentication, REST APIs, and financial dashboard design.",
+      description: "MoneyPay was built to strengthen my full-stack development skills using React, Node.js, and Express. It simulates a clean digital wallet where users can view virtual card details, send peer-to-peer transfers with balance checks, and track monthly incoming and outgoing cash flow.",
       image: moneypayImg,
-      technologies: ["React", "Node.js", "APIs", "Payment Integration", "Modern CSS"],
-      accentColor: "#36D9F5",
+      technologies: ["React", "Node.js", "Express.js", "REST APIs", "JWT Auth"],
       githubUrl: "https://github.com/HarshitRaj31",
-      demoUrl: "https://github.com/HarshitRaj31",
-      demoPlaceholder: true,
-      features: [
-        "Interactive virtual card presentation with instant freeze and CVV preview states",
-        "Real-time cash-flow data visualization and monthly expenditure breakdown",
-        "Frictionless P2P quick-transfer modal with recipient validation checks",
-        "End-to-end encrypted transaction flow simulation and audit logging"
+      metrics: [
+        { label: "Project Type", value: "Full-Stack Web App" },
+        { label: "Core Focus", value: "React · Node · Express" },
+        { label: "Key Concept", value: "JWT Auth & REST CRUD" }
       ],
-      visualAspect: "Minimal transaction interface, translucent card preview, and financial charts"
+      features: [
+        "Designed a clean wallet dashboard with an interactive virtual card preview and balance summary",
+        "Built a quick-transfer form with recipient lookup and client/server balance validation",
+        "Implemented user authentication and protected API routes using JSON Web Tokens (JWT)",
+        "Created cash-flow trend charts and a recent transaction activity history list"
+      ],
+      architectureSteps: [
+        {
+          step: "01. JWT Login & Session Protection",
+          detail: "Users authenticate via Express endpoints and receive a JWT token to access wallet routes."
+        },
+        {
+          step: "02. Transfer Form Validation",
+          detail: "Checks that the transfer amount is valid and does not exceed the user's current balance."
+        },
+        {
+          step: "03. Backend Balance Update",
+          detail: "Processes the transfer request on the Node.js server and records the transaction in the database."
+        },
+        {
+          step: "04. Instant UI State Refresh",
+          detail: "Updates the displayed account balance and recent activity list in React."
+        }
+      ],
+      codeSnippet: `// Express route handler for peer-to-peer transfer practice
+app.post('/api/transfer', verifyJwtToken, async (req, res) => {
+  const { recipientEmail, amount } = req.body;
+  const numericAmount = Number(amount);
+
+  if (!recipientEmail || numericAmount <= 0) {
+    return res.status(400).json({ error: 'Invalid transfer details.' });
+  }
+
+  const sender = await User.findById(req.user.id);
+  if (sender.balance < numericAmount) {
+    return res.status(400).json({ error: 'Insufficient wallet balance.' });
+  }
+
+  const recipient = await User.findOne({ email: recipientEmail });
+  if (!recipient) {
+    return res.status(404).json({ error: 'Recipient user not found.' });
+  }
+
+  sender.balance -= numericAmount;
+  recipient.balance += numericAmount;
+  await sender.save();
+  await recipient.save();
+
+  res.json({ status: 'success', newBalance: sender.balance });
+});`
     },
     {
       id: "cinebox",
       num: "04",
       title: "Cinebox",
-      category: "Media Discovery & Entertainment",
+      filterCategory: "web",
+      category: "Frontend Web & UI Project",
       year: "2024",
-      headline: "Cinematic Movie Discovery & Interactive Ticket Reservation",
-      summary: "A movie discovery and ticket-booking application.",
-      description: "An editorial cinema platform celebrating dramatic film art direction. Combines rich movie metadata discovery, dynamic video trailer previews, showtime selectors, and an interactive grid-based auditorium seat reservation interface.",
+      role: "Frontend Developer",
+      status: "Completed Project",
+      headline: "Movie Discovery & Interactive Theater Seat Booking App",
+      summary: "A responsive React application for browsing movies, filtering showtimes, and selecting theater seats interactively.",
+      description: "Cinebox is a frontend project focused on mastering React state management, client-side routing, and CSS Grid layouts. Visitors can browse featured movies, filter screenings by format (2D, 3D, IMAX), and click seats on an interactive auditorium grid with live ticket price calculation.",
       image: cineboxImg,
       technologies: ["React", "Vite", "React Router", "REST APIs", "CSS Grid"],
-      accentColor: "#477BFF",
       githubUrl: "https://github.com/HarshitRaj31",
-      demoUrl: "https://github.com/HarshitRaj31",
-      demoPlaceholder: true,
-      features: [
-        "Curated cinematic catalog with immersive hero previews and high-fidelity poster art",
-        "Interactive SVG/Grid theater seating selector with live seat reservation states",
-        "Dynamic showtime scheduler with format filters (2D, 3D, Laser)",
-        "Fluid client-side navigation powered by React Router and Vite optimization"
+      metrics: [
+        { label: "Project Type", value: "Interactive React SPA" },
+        { label: "Core Focus", value: "State & CSS Grid" },
+        { label: "Key Concept", value: "Interactive Seat Matrix" }
       ],
-      visualAspect: "Cinematic movie artwork, dramatic typography, and seat reservation grid"
+      features: [
+        "Built an interactive auditorium seat selector grid showing available, selected, and booked seats",
+        "Created showtime and format filter tabs (2D, 3D, IMAX) with automatic ticket price totals",
+        "Integrated movie catalog data with poster cards, ratings, genres, and trailer hero banners",
+        "Used React Router and Vite for smooth, fast single-page navigation across views"
+      ],
+      architectureSteps: [
+        {
+          step: "01. Movie Catalog Fetching",
+          detail: "Loads movie titles, ratings, genres, and poster artwork into a responsive card grid."
+        },
+        {
+          step: "02. Showtime & Format Selection",
+          detail: "Allows users to pick a screening time and theater format (2D or 3D) using interactive buttons."
+        },
+        {
+          step: "03. Interactive Seat Grid State",
+          detail: "Tracks selected seat IDs in React state while preventing clicks on already-booked seats."
+        },
+        {
+          step: "04. Booking Summary Calculation",
+          detail: "Multiplies selected seat count by ticket price to display the live booking summary."
+        }
+      ],
+      codeSnippet: `export function useSeatSelection(bookedSeats = ['A14', 'B05'], ticketPrice = 16) {
+  const [selectedSeats, setSelectedSeats] = useState(['A15']);
+
+  const toggleSeat = (seatId) => {
+    if (bookedSeats.includes(seatId)) return;
+
+    setSelectedSeats((prev) =>
+      prev.includes(seatId)
+        ? prev.filter((id) => id !== seatId)
+        : [...prev, seatId]
+    );
+  };
+
+  return {
+    selectedSeats,
+    totalPrice: selectedSeats.length * ticketPrice,
+    toggleSeat,
+  };
+}`
     }
   ],
 
   skillsGrouped: [
     {
-      category: "FRONTEND",
-      desc: "User interfaces, responsive systems & client architecture",
-      technologies: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "Bootstrap"]
+      id: "frontend",
+      index: "01",
+      category: "Frontend Web Development",
+      desc: "Building responsive, accessible user interfaces and single-page React applications",
+      technologies: [
+        { name: "React", level: "Daily Use", context: "Component architecture, hooks (useState, useEffect), React Router, state management" },
+        { name: "JavaScript (ES6+)", level: "Daily Use", context: "Async/await, Fetch API, DOM manipulation, array methods, modular JS" },
+        { name: "HTML5 & Modern CSS", level: "Daily Use", context: "Semantic markup, CSS Grid, Flexbox, responsive mobile-first layouts" },
+        { name: "Tailwind CSS & Bootstrap", level: "Comfortable", context: "Utility-first styling, dark-mode UI systems, rapid component prototyping" }
+      ]
     },
     {
-      category: "BACKEND",
-      desc: "Server-side logic, routing, auth & service APIs",
-      technologies: ["Node.js", "Express.js", "REST APIs", "JWT"]
+      id: "backend",
+      index: "02",
+      category: "Backend & REST APIs",
+      desc: "Server-side JavaScript, routing, authentication, and API integration",
+      technologies: [
+        { name: "Node.js & Express.js", level: "Working Knowledge", context: "Building REST API endpoints, middleware, request handling (used in MoneyPay)" },
+        { name: "RESTful API Design", level: "Comfortable", context: "JSON payloads, CRUD operations, connecting React frontends to backend services" },
+        { name: "JWT Authentication", level: "Working Knowledge", context: "User login/signup flows, protected routes, token verification" }
+      ]
     },
     {
-      category: "DATABASES",
-      desc: "Data models, document persistence & relational querying",
-      technologies: ["MongoDB", "MySQL"]
+      id: "systems",
+      index: "03",
+      category: "Cloud & Systems (Currently Exploring)",
+      desc: "Self-directed learning in Linux, containers, and systems programming",
+      technologies: [
+        { name: "Linux & Bash CLI", level: "Actively Learning", context: "Daily Linux usage, terminal workflows, file permissions, process & service basics" },
+        { name: "Docker", level: "Actively Learning", context: "Containerizing web apps, Dockerfiles, managing containers in Kamui Cloud" },
+        { name: "Go (Golang)", level: "Actively Learning", context: "Writing concurrent programs, HTTP servers, and CLI tools for cloud experiments" },
+        { name: "Git & GitHub", level: "Daily Use", context: "Version control, branching, pull requests, managing open-source project repos" }
+      ]
     },
     {
-      category: "INFRASTRUCTURE",
-      desc: "Systems, container orchestration & cloud engineering",
-      technologies: ["Go", "Docker", "Linux", "Git", "GitHub"]
+      id: "databases",
+      index: "04",
+      category: "Databases & Core CS Coursework",
+      desc: "Database management systems and undergraduate Computer Science fundamentals",
+      technologies: [
+        { name: "MongoDB & MySQL", level: "Working Knowledge", context: "Document collections, relational tables, basic SQL joins, and CRUD queries" },
+        { name: "Data Structures & Algorithms", level: "B.Tech Coursework", context: "Arrays, linked lists, trees, sorting/searching, and problem-solving practice" },
+        { name: "OS & Computer Networks", level: "B.Tech Coursework", context: "Processes, memory management, TCP/IP layers, HTTP/DNS, and socket basics" }
+      ]
     }
   ],
 
   cloudSection: {
-    badge: "SYSTEM ARCHITECTURE & OPEN SOURCE",
-    headline: "NOT JUST INTERFACES. SYSTEMS THAT POWER THEM.",
-    intro: "While I craft thoughtful, polished browser experiences, my deeper engineering passion lives in the layers beneath: self-hosted private clouds, distributed systems, Linux kernel internals, and containerization with Docker and Go.",
+    kicker: "02. Beyond the Classroom — Cloud & Systems Lab",
+    headline: "Connecting CS Fundamentals to Real Linux & Cloud Systems.",
+    intro: "As a Computer Science student, I love seeing how subjects like Operating Systems and Computer Networks work in the real world. Alongside web development, I spend my free time experimenting with Linux, Docker containers, and Go through my student project, Kamui Cloud.",
     kamuiHighlight: {
-      title: "Kamui Cloud — Self-Hosted Infrastructure",
-      subtitle: "Reclaiming sovereignty through bare-metal homelab computing",
-      description: "Born out of curiosity about how AWS and GCP orchestrate physical machines, Kamui Cloud is an experimental project exploring how standard consumer hardware can be transformed into a cohesive, self-healing private cloud cluster.",
+      title: "Kamui Cloud — Student Homelab Project",
+      subtitle: "Learning cloud infrastructure by building a small private cloud from scratch",
+      description: "Instead of only reading about cloud computing in textbooks, I started Kamui Cloud to learn hands-on how multiple computers can run Docker containers, report system health, and work together on a local Linux network.",
       github: "https://github.com/HarshitRaj31",
       pillars: [
-        { title: "Go Networking", desc: "Low-overhead services communicating via custom TCP/HTTP channels." },
-        { title: "Container Daemon", desc: "Isolated micro-workloads running via Docker daemon orchestration." },
-        { title: "Linux SysAdmin", desc: "Systemd daemon management, iptables firewalling, and kernel telemetry." },
-        { title: "Node Resilience", desc: "Automated failover monitoring across interconnected local nodes." }
+        {
+          index: "01",
+          title: "Go Services",
+          desc: "Learning Go concurrency (goroutines) by writing lightweight node health-check and API services."
+        },
+        {
+          index: "02",
+          title: "Docker Containers",
+          desc: "Packaging applications into isolated containers and understanding images, ports, and volumes."
+        },
+        {
+          index: "03",
+          title: "Linux CLI & OS",
+          desc: "Applying Operating Systems concepts on Linux—monitoring CPU, RAM, processes, and systemd services."
+        },
+        {
+          index: "04",
+          title: "Networking Basics",
+          desc: "Exploring how local nodes communicate over TCP/HTTP, IP routing, and reverse proxies."
+        }
       ]
     }
   },
@@ -187,31 +438,53 @@ export const portfolioData = {
   journey: [
     {
       year: "2025 — Present",
-      phase: "Cloud Infrastructure & Distributed Systems",
-      title: "Exploring Go, Linux, Docker & Cloud Architecture",
-      description: "Venturing beyond frontend applications into systems engineering. Building Kamui Cloud, orchestrating containerized microservices, writing concurrent Go routines, and automating Linux server environments.",
-      tag: "Systems & Infrastructure"
+      period: "2025",
+      phase: "Exploring Cloud Infrastructure & Systems",
+      title: "Learning Go, Docker, Linux & Building Kamui Cloud",
+      description: "Expanding my skills beyond web development into cloud and systems engineering. Building Kamui Cloud as a self-hosted homelab project and creating ToxicGuard to explore AI-powered text moderation.",
+      domain: "Cloud & Systems Exploration",
+      highlights: [
+        "Started learning Go (Golang) and Docker containerization hands-on",
+        "Built Kamui Cloud to experiment with self-hosted Linux servers",
+        "Developed ToxicGuard AI text moderation dashboard in React"
+      ]
     },
     {
       year: "2024 — 2025",
-      phase: "Full-Stack Development & Open Source",
-      title: "Collaborative Software Development & Modern Web",
-      description: "Deepened engineering foundation building full-stack web applications like MoneyPay and ToxicGuard. Mastered component lifecycle, state synchronization, RESTful API integrations, and open-source contribution practices.",
-      tag: "Full-Stack Engineering"
+      period: "2024",
+      phase: "Full-Stack Web Development Projects",
+      title: "Building End-to-End Web Apps with React & Node.js",
+      description: "Moved from static websites to full-stack applications. Built MoneyPay and Cinebox to learn how frontend React components communicate with Node.js/Express REST APIs, JWT authentication, and databases.",
+      domain: "Full-Stack Web Learning",
+      highlights: [
+        "Built MoneyPay digital wallet interface with Node.js & Express",
+        "Created Cinebox movie discovery and interactive seat booking app",
+        "Practiced Git workflows and collaborative coding on GitHub"
+      ]
     },
     {
       year: "2023 — 2024",
-      phase: "Frontend Architecture & UI Craft",
-      title: "Web Development Projects & Creative Interfaces",
-      description: "Built dozens of interactive web interfaces exploring semantic HTML5, modern CSS layouts (Flexbox, Grid, animations), vanilla JavaScript fundamentals, and modern React architectures.",
-      tag: "Creative Web"
+      period: "2023",
+      phase: "Web Development Foundations",
+      title: "Mastering HTML, CSS, JavaScript & React Basics",
+      description: "Started building interactive web pages from scratch. Focused on responsive layouts with Flexbox and CSS Grid, modern ES6+ JavaScript fundamentals, and component-based UI development.",
+      domain: "Frontend Fundamentals",
+      highlights: [
+        "Built multiple responsive frontend projects and UI prototypes",
+        "Transitioned from vanilla JavaScript to React and Tailwind CSS"
+      ]
     },
     {
-      year: "2023 — Present",
-      phase: "Academic Foundation",
-      title: "Computer Science Engineering Studies (B.Tech CSE)",
-      description: "Undergraduate Computer Science curriculum focusing on Data Structures & Algorithms, Object-Oriented Programming, Computer Networks, Operating Systems, and Database Management Systems.",
-      tag: "B.Tech CSE"
+      year: "2023 — 2027",
+      period: "B.Tech",
+      phase: "Undergraduate Computer Science Degree",
+      title: "B.Tech in Computer Science & Engineering",
+      description: "Currently pursuing my Bachelor of Technology in Computer Science Engineering. Studying core subjects including Data Structures & Algorithms, Operating Systems, Computer Networks, OOP, and Database Management Systems.",
+      domain: "Academic Foundation",
+      highlights: [
+        "Connecting university CS theory with practical software projects",
+        "Actively preparing for software and cloud engineering internships"
+      ]
     }
   ]
 };
