@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar({ personal, onOpenDossier }) {
   const [scrolled, setScrolled] = useState(false);
@@ -75,8 +76,10 @@ export default function Navbar({ personal, onOpenDossier }) {
           })}
         </nav>
 
-        {/* Zone 3: 1 primary action */}
+        {/* Zone 3: Actions + Theme Switcher */}
         <div className="flex items-center gap-3 shrink-0">
+          <ThemeToggle />
+
           <button
             type="button"
             onClick={onOpenDossier}
@@ -112,6 +115,15 @@ export default function Navbar({ personal, onOpenDossier }) {
                 <span className="font-mono text-xs text-[#36D9F5]">View</span>
               </a>
             ))}
+
+            {/* Mobile Theme Mode Switcher */}
+            <div className="pt-3 pb-1 border-t border-white/[0.08] space-y-2">
+              <span className="text-[11px] font-mono font-semibold text-zinc-400">
+                Theme Appearance
+              </span>
+              <ThemeToggle variant="segmented" />
+            </div>
+
             <div className="pt-2 flex flex-col gap-2">
               <button
                 type="button"

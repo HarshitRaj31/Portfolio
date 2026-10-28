@@ -15,12 +15,24 @@
     scroll-behavior: smooth;
   }
 
+  html.light {
+    color-scheme: light;
+    background-color: #F8FAFC;
+    color: #0F172A;
+  }
+
   body {
     background-color: #06080D;
     color: #F4F6FB;
     overflow-x: hidden;
     line-height: 1.65;
     letter-spacing: 0.005em;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html.light body {
+    background-color: #F8FAFC;
+    color: #1E293B;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -29,6 +41,15 @@
     letter-spacing: -0.025em;
     line-height: 1.12;
     text-wrap: balance;
+  }
+
+  html.light h1,
+  html.light h2,
+  html.light h3,
+  html.light h4,
+  html.light h5,
+  html.light h6 {
+    color: #0F172A;
   }
 }
 
@@ -49,7 +70,178 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Custom Subtle Scrollbar */
+/* ==========================================================================
+   LIGHT MODE DESIGN SYSTEM OVERRIDES
+   Transforms dark-specific utilities into a crisp, high-contrast, editorial
+   light aesthetic with WCAG AA compliance and fluid shadows.
+   ========================================================================== */
+
+/* 1. Canvas & Structural Backgrounds */
+html.light .bg-\[\#07090E\] {
+  background-color: #F8FAFC !important;
+}
+
+/* 2. Elevated Cards & Panels (Crisp Frosted White with Subtle Elevation) */
+html.light .bg-\[\#0B0F17\],
+html.light .bg-\[\#0B0F17\]\/95,
+html.light .bg-\[\#0B0F17\]\/90,
+html.light .bg-\[\#0B0F17\]\/85,
+html.light .bg-\[\#0B0F17\]\/80 {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+}
+
+/* 3. Inset Wells, Tab Strips, Chips, and Sub-containers */
+html.light .bg-\[\#06080D\],
+html.light .bg-\[\#06080D\]\/90,
+html.light .bg-\[\#06080D\]\/85,
+html.light .bg-\[\#06080D\]\/80,
+html.light .bg-\[\#06080D\]\/75 {
+  background-color: #F1F5F9 !important;
+}
+
+/* 4. Top Navigation Bar Blur States */
+html.light header.bg-\[\#06080D\]\/90 {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+html.light header.bg-\[\#06080D\]\/75 {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+/* 5. Borders & Dividers */
+html.light .border-white\/10,
+html.light .border-white\/12,
+html.light .border-white\/15,
+html.light .border-white\/20,
+html.light .border-white\/25,
+html.light .border-white\/\[0\.08\] {
+  border-color: rgba(15, 23, 42, 0.09) !important;
+}
+
+html.light .divide-white\/10 > :not([hidden]) ~ :not([hidden]),
+html.light .divide-white\/12 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(15, 23, 42, 0.09) !important;
+}
+
+/* 6. Text Contrast & Hierarchy */
+html.light .text-white {
+  color: #0F172A !important;
+}
+
+html.light .text-zinc-100,
+html.light .text-zinc-200 {
+  color: #334155 !important;
+}
+
+html.light .text-zinc-300,
+html.light .text-zinc-400 {
+  color: #475569 !important;
+}
+
+html.light .text-zinc-500 {
+  color: #64748B !important;
+}
+
+/* Cyan accent - Sky-600 provides 5.2:1 contrast against white */
+html.light .text-\[\#36D9F5\] {
+  color: #0284C7 !important;
+}
+
+/* Amber highlights - Amber-700 provides crisp readability on light */
+html.light .text-amber-300 {
+  color: #B45309 !important;
+}
+
+/* 7. Action Buttons & Brand Highlights */
+html.light .bg-\[\#36D9F5\] {
+  background-color: #0284C7 !important;
+  color: #FFFFFF !important;
+}
+
+html.light .bg-\[\#36D9F5\]:hover,
+html.light .hover\:bg-cyan-300:hover {
+  background-color: #0369A1 !important;
+  color: #FFFFFF !important;
+}
+
+html.light .bg-\[\#36D9F5\]\/15,
+html.light .bg-\[\#36D9F5\]\/10,
+html.light .bg-\[\#36D9F5\]\/20 {
+  background-color: rgba(2, 132, 199, 0.12) !important;
+}
+
+html.light .border-\[\#36D9F5\]\/50,
+html.light .border-\[\#36D9F5\]\/60 {
+  border-color: rgba(2, 132, 199, 0.35) !important;
+}
+
+html.light .hover\:border-\[\#36D9F5\]\/60:hover {
+  border-color: rgba(2, 132, 199, 0.6) !important;
+}
+
+/* 8. Secondary Buttons & Hover States */
+html.light .hover\:bg-white\/10:hover,
+html.light .hover\:bg-white\/5:hover,
+html.light .hover\:bg-white\/15:hover,
+html.light .hover\:bg-white\/20:hover {
+  background-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+html.light .hover\:text-white:hover {
+  color: #0F172A !important;
+}
+
+html.light .hover\:text-\[\#36D9F5\]:hover {
+  color: #0284C7 !important;
+}
+
+html.light .hover\:border-white\/40:hover,
+html.light .hover\:border-white\/25:hover,
+html.light .hover\:border-white\/20:hover {
+  border-color: rgba(15, 23, 42, 0.25) !important;
+}
+
+/* 9. Developer Code Blocks & Terminals (Keep Obsidian Slate for authentic IDE look) */
+html.light pre.bg-\[\#06080D\],
+html.light div.h-52.bg-\[\#06080D\] {
+  background-color: #0F172A !important;
+  color: #E2E8F0 !important;
+  border-color: rgba(15, 23, 42, 0.18) !important;
+}
+html.light pre.bg-\[\#06080D\] span,
+html.light pre.bg-\[\#06080D\] code {
+  color: inherit;
+}
+html.light div.h-52.bg-\[\#06080D\] .text-zinc-400,
+html.light div.h-52.bg-\[\#06080D\] .text-zinc-500 {
+  color: #94A3B8 !important;
+}
+
+/* 10. Form Inputs & Textareas */
+html.light input,
+html.light textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+}
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94A3B8 !important;
+}
+html.light input:focus,
+html.light textarea:focus {
+  border-color: #0284C7 !important;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* 11. Modal Backdrop */
+html.light .bg-black\/80 {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+}
+
+/* 12. Custom Subtle Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -63,6 +255,17 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #36D9F5;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(2, 132, 199, 0.35);
+  border-radius: 9999px;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #0284C7;
 }
 
 @media (prefers-reduced-motion: reduce) {

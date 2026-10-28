@@ -11,21 +11,24 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import DossierModal from './components/DossierModal';
+import { useTheme } from './context/ThemeContext';
 
 export default function App() {
   const { personal, projects, skillsGrouped, cloudSection, journey } = portfolioData;
   const [dossierOpen, setDossierOpen] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === 'dark';
 
   return (
-    <div className="relative min-h-screen bg-[#07090E] text-[#F8FAFC] flex flex-col selection:bg-blue-500/30 selection:text-white">
+    <div className="relative min-h-screen bg-[#07090E] text-[#F8FAFC] flex flex-col selection:bg-blue-500/30 selection:text-white transition-colors duration-200">
       {/* Interactive React Bits RippleGrid Background */}
       <div className="fixed inset-0 z-0 pointer-events-none no-print" aria-hidden="true">
         <RippleGrid
-          color="#3B82F6"
+          color={isDark ? "#3B82F6" : "#0284C7"}
           variant="lines"
           cellSize={48}
           lineWidth={1}
-          glow={0.65}
+          glow={isDark ? 0.65 : 0.45}
           rippleStrength={1.05}
           rippleSpeed={0.95}
           rippleSize={1.1}
@@ -34,7 +37,8 @@ export default function App() {
           mouseInteraction={true}
           clickRipple={true}
           fade={0.35}
-          opacity={0.75}
+          opacity={isDark ? 0.75 : 0.6}
+          lightMode={!isDark}
         />
       </div>
 

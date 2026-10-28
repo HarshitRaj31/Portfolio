@@ -1,5 +1,6 @@
 import { ArrowUp } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import ThemeToggle from './ThemeToggle';
 
 export default function Footer({ personal, onOpenDossier }) {
   const scrollToTop = () => {
@@ -50,6 +51,8 @@ export default function Footer({ personal, onOpenDossier }) {
               <LinkedinIcon size={14} />
               <span>LinkedIn</span>
             </a>
+            <ThemeToggle />
+
             <button
               type="button"
               onClick={scrollToTop}
