@@ -1,0 +1,524 @@
+/* ==========================================================================
+   HERO — THE SIGNATURE MOMENT
+   Editorial Typography · Abstract Composition · Dimensional Blue Light
+   ========================================================================== */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 140px 0 80px;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+}
+
+/* ==========================================
+   LEFT: ASYMMETRICAL EDITORIAL TYPOGRAPHY
+   ========================================== */
+.hero-typography {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+/* Meta Bar */
+.hero-meta-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+}
+
+.hero-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meta-separator {
+  color: var(--border-medium);
+}
+
+.meta-divider {
+  color: var(--accent-cyan);
+  opacity: 0.6;
+}
+
+/* Headline */
+.hero-headline-wrap {
+  margin-bottom: 28px;
+}
+
+.hero-title {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.8rem, 6.2vw, 5.4rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+}
+
+.headline-line {
+  display: block;
+}
+
+.headline-line.line-1 {
+  color: #ffffff;
+}
+
+.headline-line.line-2 {
+  margin: 4px 0;
+}
+
+.headline-line.line-3 {
+  text-shadow: 0 0 45px rgba(71, 123, 255, 0.4);
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: clamp(1.05rem, 1.4vw, 1.28rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 38px;
+  font-weight: 400;
+}
+
+.hero-description strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-action-btn {
+  padding: 16px 32px;
+  font-size: 0.98rem;
+}
+
+/* Social & Copy Pill */
+.hero-social-footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.hero-social-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all var(--transition-fast);
+}
+
+.hero-social-link:hover {
+  color: #ffffff;
+  border-color: var(--accent-cyan);
+  background: rgba(54, 217, 245, 0.08);
+  transform: translateY(-2px);
+}
+
+.hero-copy-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.hero-copy-pill:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--accent-cyan);
+  border-color: rgba(54, 217, 245, 0.3);
+}
+
+/* ==========================================
+   RIGHT: ORIGINAL ABSTRACT COMPOSITION
+   ========================================== */
+.hero-visual-art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+}
+
+/* Dimensional Blue Light Source */
+.dimensional-light-source {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(71, 123, 255, 0.35) 0%, rgba(54, 217, 245, 0.15) 45%, transparent 75%);
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+  animation: pulseSource 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseSource {
+  0% { transform: scale(0.9) translate(-10px, -10px); opacity: 0.7; }
+  100% { transform: scale(1.1) translate(15px, 15px); opacity: 0.95; }
+}
+
+.abstract-stage {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Orbital Vector Rings */
+.orbital-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spin-slow {
+  transform-origin: 250px 250px;
+  animation: spinClockwise 45s linear infinite;
+}
+
+.spin-reverse {
+  transform-origin: 250px 250px;
+  animation: spinCounter 35s linear infinite;
+}
+
+@keyframes spinClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinCounter {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.pulsing-node {
+  animation: pulsePoint 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulsePoint {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 1; filter: drop-shadow(0 0 6px #36d9f5); }
+}
+
+/* Floating Terminal */
+.floating-terminal {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 440px;
+  background: rgba(14, 17, 24, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(71, 123, 255, 0.2);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+
+.floating-terminal:hover {
+  transform: translateY(-6px);
+  border-color: rgba(54, 217, 245, 0.35);
+  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(71, 123, 255, 0.25);
+}
+
+.terminal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.terminal-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+}
+
+.terminal-branch {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* Terminal Code lines */
+.terminal-code {
+  padding: 20px 22px;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.code-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.code-line.indent {
+  padding-left: 20px;
+}
+
+.code-num {
+  color: var(--text-muted);
+  opacity: 0.4;
+  font-size: 0.7rem;
+  width: 20px;
+  user-select: none;
+}
+
+.kw { color: #36d9f5; font-weight: 600; }
+.entity { color: #ffffff; }
+.str { color: #a5b4fc; }
+.cmt { color: #64748b; font-style: italic; }
+.fn { color: #60a5fa; }
+.num { color: #f59e0b; }
+
+.code-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 13px;
+  background: var(--accent-cyan);
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.terminal-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px;
+  background: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.status-live-node {
+  color: #34d399;
+  letter-spacing: 0.05em;
+}
+
+/* Floating Technology Orbit Badges */
+.tech-badge-orbit {
+  position: absolute;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(14, 17, 24, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.76rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s var(--ease-out), border-color 0.3s ease;
+}
+
+.tech-badge-orbit:hover {
+  transform: scale(1.08);
+  border-color: var(--accent-cyan);
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.cyan-dot { background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan); }
+.blue-dot { background: var(--accent-blue); box-shadow: 0 0 8px var(--accent-blue); }
+.green-dot { background: var(--accent-emerald); box-shadow: 0 0 8px var(--accent-emerald); }
+
+.badge-react {
+  top: 15px;
+  left: 20px;
+  animation: floatBob 6s ease-in-out infinite;
+}
+
+.badge-go {
+  top: 45px;
+  right: 10px;
+  animation: floatBob 7s ease-in-out infinite -2s;
+}
+
+.badge-docker {
+  bottom: 50px;
+  right: -10px;
+  animation: floatBob 8s ease-in-out infinite -4s;
+}
+
+.badge-js {
+  bottom: 30px;
+  left: 15px;
+  animation: floatBob 6.5s ease-in-out infinite -1s;
+}
+
+.badge-linux {
+  top: 50%;
+  left: -25px;
+  animation: floatBob 7.5s ease-in-out infinite -3s;
+}
+
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Dimensional Geometric HUD Elements */
+.hud-metric {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 12px;
+  background: rgba(8, 9, 13, 0.7);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  backdrop-filter: blur(6px);
+}
+
+.hud-top-right {
+  top: -20px;
+  right: 40px;
+}
+
+.hud-bottom-left {
+  bottom: -20px;
+  left: 50px;
+}
+
+.hud-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.hud-value {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding-top: 20px;
+  }
+  .hero-visual-art {
+    order: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 110px 0 60px;
+  }
+  .hero-title {
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-action-btn {
+    width: 100%;
+  }
+  .floating-terminal {
+    max-width: 100%;
+  }
+  .terminal-code {
+    font-size: 0.72rem;
+    padding: 16px;
+  }
+  .badge-linux {
+    display: none;
+  }
+  .hud-metric {
+    display: none;
+  }
+}

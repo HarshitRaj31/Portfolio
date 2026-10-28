@@ -1,0 +1,234 @@
+/* ==========================================================================
+   MY JOURNEY — THIN VERTICAL TIMELINE
+   Oversized Year Markers · Editorial Typography · Clean Spacing
+   ========================================================================== */
+
+.journey-section {
+  position: relative;
+  background: linear-gradient(180deg, transparent 0%, rgba(14, 17, 24, 0.45) 50%, transparent 100%);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.timeline-spine-wrapper {
+  position: relative;
+  max-width: 1040px;
+  margin: 60px auto 0;
+  padding: 20px 0;
+}
+
+/* Thin Vertical Axis */
+.timeline-central-axis {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1.5px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(54, 217, 245, 0.5) 15%,
+    rgba(71, 123, 255, 0.5) 85%,
+    transparent 100%
+  );
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-entries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Milestone Row */
+.timeline-milestone-row {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  position: relative;
+}
+
+/* Left vs Right Layout Alternation */
+.timeline-milestone-row.milestone-left .milestone-year-cell {
+  order: 3;
+  text-align: left;
+  padding-left: 32px;
+}
+
+.timeline-milestone-row.milestone-left .milestone-axis-node {
+  order: 2;
+}
+
+.timeline-milestone-row.milestone-left .milestone-content-card {
+  order: 1;
+  text-align: right;
+  margin-right: 12px;
+}
+
+.timeline-milestone-row.milestone-right .milestone-year-cell {
+  order: 1;
+  text-align: right;
+  padding-right: 32px;
+}
+
+.timeline-milestone-row.milestone-right .milestone-axis-node {
+  order: 2;
+}
+
+.timeline-milestone-row.milestone-right .milestone-content-card {
+  order: 3;
+  text-align: left;
+  margin-left: 12px;
+}
+
+/* Oversized Year Marker */
+.milestone-year-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.oversized-year-marker {
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 0.95;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.22);
+  transition: -webkit-text-stroke 0.3s ease;
+}
+
+.timeline-milestone-row:hover .oversized-year-marker {
+  -webkit-text-stroke: 1.5px var(--accent-cyan);
+}
+
+.year-full-tag {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  margin-top: 4px;
+}
+
+/* Axis Node */
+.milestone-axis-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.node-glow-ring {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(54, 217, 245, 0.3);
+  background: rgba(8, 9, 13, 0.9);
+  transition: all 0.3s ease;
+}
+
+.node-center-point {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 12px var(--accent-cyan);
+  transition: transform 0.3s ease;
+}
+
+.timeline-milestone-row:hover .node-glow-ring {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(54, 217, 245, 0.4);
+  transform: scale(1.2);
+}
+
+.timeline-milestone-row:hover .node-center-point {
+  transform: scale(1.3);
+}
+
+/* Content Card */
+.milestone-content-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  transition: all var(--transition-normal);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-milestone-row:hover .milestone-content-card {
+  border-color: rgba(71, 123, 255, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7);
+}
+
+.card-top-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-cyan);
+  margin-bottom: 10px;
+}
+
+.tag-bracket {
+  color: var(--text-muted);
+}
+
+.milestone-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.milestone-phase {
+  font-size: 0.86rem;
+  color: var(--accent-blue-light);
+  margin-bottom: 12px;
+}
+
+.milestone-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .timeline-central-axis {
+    left: 20px;
+  }
+  .timeline-milestone-row,
+  .timeline-milestone-row.milestone-left,
+  .timeline-milestone-row.milestone-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 54px;
+    position: relative;
+  }
+  .milestone-axis-node {
+    position: absolute;
+    left: -10px;
+    top: 0;
+  }
+  .milestone-year-cell,
+  .timeline-milestone-row.milestone-left .milestone-year-cell,
+  .timeline-milestone-row.milestone-right .milestone-year-cell {
+    padding: 0;
+    text-align: left;
+    margin-bottom: 12px;
+  }
+  .milestone-content-card,
+  .timeline-milestone-row.milestone-left .milestone-content-card,
+  .timeline-milestone-row.milestone-right .milestone-content-card {
+    text-align: left;
+    margin: 0;
+    width: 100%;
+  }
+  .oversized-year-marker {
+    font-size: 2.5rem;
+  }
+}
