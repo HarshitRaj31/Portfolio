@@ -7,7 +7,6 @@ export default function ThemeToggle({ variant = 'button', className = '' }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
-  // Close dropdown menu on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -20,17 +19,16 @@ export default function ThemeToggle({ variant = 'button', className = '' }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [menuOpen]);
 
-  // Segmented 3-option bar (great for mobile drawer or explicit settings)
   if (variant === 'segmented') {
     const options = [
       { id: 'light', label: 'Light', icon: Sun },
       { id: 'dark', label: 'Dark', icon: Moon },
-      { id: 'system', label: 'System', icon: Monitor },
+      { id: 'system', label: 'Auto', icon: Monitor },
     ];
 
     return (
       <div
-        className={`flex items-center p-1 rounded-xl bg-zinc-900/40 dark:bg-zinc-900/60 light:bg-slate-200/70 border border-white/10 dark:border-white/15 light:border-slate-300/80 ${className}`}
+        className={`flex items-center p-1 rounded-lg bg-[#081109] border border-[#284724] font-mono ${className}`}
         role="group"
         aria-label="Theme selector"
       >
@@ -42,14 +40,14 @@ export default function ThemeToggle({ variant = 'button', className = '' }) {
               key={opt.id}
               type="button"
               onClick={() => setTheme(opt.id)}
-              className={`flex-1 inline-flex items-center justify-center gap-1.5 py-1.5 px-2.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+              className={`flex-1 inline-flex items-center justify-center gap-1.5 py-1.5 px-2.5 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                 isActive
-                  ? 'bg-[#36D9F5] text-[#06080D] light:bg-[#0284C7] light:text-white shadow-sm'
-                  : 'text-zinc-400 hover:text-zinc-200 light:text-slate-600 light:hover:text-slate-900'
+                  ? 'bg-[#84CC16] text-[#040705] shadow-sm'
+                  : 'text-zinc-400 hover:text-zinc-100'
               }`}
               aria-pressed={isActive}
             >
-              <Icon size={14} className="shrink-0" />
+              <Icon size={13} className="shrink-0" />
               <span>{opt.label}</span>
             </button>
           );
@@ -58,7 +56,6 @@ export default function ThemeToggle({ variant = 'button', className = '' }) {
     );
   }
 
-  // Default compact toggle button with dropdown options on right-click or hover/alt
   const isDark = resolvedTheme === 'dark';
 
   return (
@@ -70,38 +67,27 @@ export default function ThemeToggle({ variant = 'button', className = '' }) {
           e.preventDefault();
           setMenuOpen(!menuOpen);
         }}
-        aria-label={`Current theme: ${theme}. Click to switch to ${isDark ? 'light' : 'dark'} mode. Right click for options.`}
+        aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
         title={`Switch to ${isDark ? 'light' : 'dark'} mode (Right-click for System/Auto)`}
-        className="relative inline-flex items-center justify-center w-9 h-9 rounded-lg border border-white/15 dark:border-white/15 light:border-slate-300/80 bg-white/5 dark:bg-white/5 light:bg-slate-100 hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-slate-200 text-zinc-100 dark:text-zinc-100 light:text-slate-800 transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#36D9F5] light:focus-visible:outline-[#0284C7] group"
+        className="relative inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-[#284724] hover:border-[#84CC16] bg-[#081109] hover:bg-[#112413] text-zinc-200 hover:text-[#9EF01A] font-mono text-xs transition-colors cursor-pointer shrink-0"
       >
-        <span className="sr-only">Toggle theme</span>
-        <div className="relative w-4 h-4 flex items-center justify-center overflow-hidden">
-          {/* Sun icon for light mode */}
-          <Sun
-            size={16}
-            className={`absolute transition-transform duration-300 ${
-              isDark
-                ? 'rotate-90 scale-0 opacity-0 text-amber-300'
-                : 'rotate-0 scale-100 opacity-100 text-amber-500'
-            }`}
-          />
-          {/* Moon icon for dark mode */}
-          <Moon
-            size={16}
-            className={`absolute transition-transform duration-300 ${
-              isDark
-                ? 'rotate-0 scale-100 opacity-100 text-[#36D9F5]'
-                : '-rotate-90 scale-0 opacity-0 text-indigo-400'
-            }`}
-          />
-        </div>
+        {isDark ? (
+          <>
+            <Moon size={14} className="text-[#84CC16]" />
+            <span className="hidden sm:inline text-[11px] font-semibold">DARK</span>
+          </>
+        ) : (
+          <>
+            <Sun size={14} className="text-amber-500" />
+            <span className="hidden sm:inline text-[11px] font-semibold">LIGHT</span>
+          </>
+        )}
       </button>
 
-      {/* Dropdown menu for picking Light, Dark, System */}
       {menuOpen && (
-        <div className="absolute right-0 top-full mt-2 w-36 py-1.5 rounded-xl bg-[#0B0F17] light:bg-white border border-white/15 light:border-slate-200 shadow-xl z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-          <div className="px-3 py-1 text-[10px] font-mono font-semibold text-zinc-400 light:text-slate-500 uppercase tracking-wider">
-            Theme Options
+        <div className="absolute right-0 top-full mt-2 w-36 py-1.5 rounded-xl bg-[#070C08] border border-[#244226] shadow-xl z-50 font-mono">
+          <div className="px-3 py-1 text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">
+            Theme Mode
           </div>
           {[
             { id: 'light', label: 'Light Mode', icon: Sun },
@@ -118,17 +104,14 @@ export default function ThemeToggle({ variant = 'button', className = '' }) {
                   setTheme(item.id);
                   setMenuOpen(false);
                 }}
-                className={`w-full flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium transition-colors text-left cursor-pointer ${
+                className={`w-full flex items-center gap-2.5 px-3 py-1.5 text-xs transition-colors text-left cursor-pointer ${
                   isSelected
-                    ? 'text-[#36D9F5] light:text-[#0284C7] font-semibold bg-white/5 light:bg-slate-100'
-                    : 'text-zinc-300 light:text-slate-700 hover:bg-white/5 light:hover:bg-slate-100'
+                    ? 'text-[#84CC16] font-bold bg-[#0E1C10]'
+                    : 'text-zinc-300 hover:bg-[#0E1C10]'
                 }`}
               >
-                <Icon size={14} className="shrink-0" />
+                <Icon size={13} className="shrink-0" />
                 <span>{item.label}</span>
-                {isSelected && (
-                  <span className="ml-auto w-1.5 h-1.5 rounded-full bg-[#36D9F5] light:bg-[#0284C7]" />
-                )}
               </button>
             );
           })}
